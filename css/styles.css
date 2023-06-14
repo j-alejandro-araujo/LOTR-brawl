@@ -8,6 +8,7 @@ body {
 }
 
 nav {
+  display: flex;
   width: 100%;
   padding-bottom: 1rem;
   background-color: #1a1514;
@@ -23,10 +24,50 @@ ul {
   margin: 0;
 }
 
-#nav-logo {
-  flex: 1;
+.logo {
+  width: 130px;
+  height: 130px;
+}
+
+.fa-bars {
+  color: white;
+}
+
+.one-column {
   display: flex;
   justify-content: center;
+}
+
+.gandalf-container {
+  position: relative;
+}
+
+.gandalf-text {
+  position: absolute;
+}
+
+#sign-button {
+  bottom: 2rem;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  background-color: #ebe8e1;
+}
+
+#join-text {
+  bottom: 4rem;
+  color: white;
+}
+
+#dare-text {
+  top: 0.5rem;
+  color: white;
+}
+
+#nav-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #nav-bars {
@@ -36,18 +77,18 @@ ul {
 #white-line {
   border: 1px solid white;
   margin: 0;
+  top: 8rem;
+  width: 100%;
+  position: absolute;
 }
 
 #title-image {
-  width: 100%;
+  width: 75%;
   height: auto;
 }
 
-.logo {
-  width: 130px;
-  height: 130px;
-}
-
-.fa-bars {
-  color: white;
+#gandalf-background {
+  width: 100vw;
+  max-height: auto;
+  justify-content: center;
 }
