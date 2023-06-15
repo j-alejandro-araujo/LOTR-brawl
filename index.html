@@ -9,18 +9,44 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asul&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="page-container">
     <header>
-      <nav>
-        <ul>
-          <li id="nav-bars"><a><i class="fa-solid fa-bars fa-4x"></i></a></li>
-        </ul>
+      <!--mobile navbar-->
+      <nav aria-label="mobile" class="mobile-nav">
         <a><img src="images/logo/logo.png" alt="logo" class="logo" id="nav-logo"></a>
-        <hr id="white-line">
+        <div id="nav-links">
+          <a href="#">ABOUT</a>
+          <a href="#">FIGHTERS</a>
+          <a href="#">MAP</a>
+          <a href="#">LOCATIONS</a>
+          <a href="#">QUOTES</a>
+          <a href="#">GIF</a>
+        </div>
+        <div id="bars-wrapper">
+          <a href="javascript:void(0);" id="nav-bars" onclick="navDropdown()"><i class="fa-solid fa-bars fa-4x"></i></a>
+        </div>
+      </nav>
+
+      <!--desktop navbar-->
+      <nav aria-label="desktop" class="desktop-nav">
+        <div id="desktop-nav-links">
+          <a href="#" class="desk-links">ABOUT</a>
+          <a href="#" class="desk-links">FIGHTERS</a>
+          <a href="#" class="desk-links">MAP</a>
+          <a><img src="images/logo/logo.png" alt="logo" class="logo" id="desktop-nav-logo"></a>
+          <a href="#" class="desk-links">LOCATIONS</a>
+          <a href="#" class="desk-links">QUOTES</a>
+          <a href="#" class="desk-links">GIF</a>
+        </div>
       </nav>
     </header>
+
+    <hr id="white-line">
 
     <main>
 
