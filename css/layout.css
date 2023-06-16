@@ -1,3 +1,7 @@
+.hidden {
+  display: none;
+}
+
 .desktop-nav {
   display: none;
 }
