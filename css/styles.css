@@ -47,11 +47,21 @@ a:hover {
   position: absolute;
 }
 
+.space-between {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  padding-top: 4.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
 #nav-links {
   display: none;
   width: 100%;
   height: auto;
-  max-height: calc(100vh - 8.5rem);
   position: absolute;
   top: 8.5rem;
   left: 0;
@@ -125,5 +135,93 @@ a:hover {
 
 #gandalf-background:hover {
   filter: blur(1.5px) brightness(90%);
-  transition: filter 0.2s ease-in-out;
+  transition: filter 0.3s ease-in-out;
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #27262688;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal {
+  position: relative;
+  background-color: #d9d9d9;
+  width: 30rem;
+  height: 22rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-image: url("../images/background/modal-background-1.png");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+#cancel {
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  background-color: #ef2901;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  align-self: flex-end;
+}
+
+#confirm {
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  background-color: #1a1514;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  align-self: flex-end;
+}
+
+#modal-title {
+  display: flex;
+  justify-content: center;
+}
+
+#modal-text {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+#modal-inputs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#email,
+#name {
+  border-style: none;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+#email::placeholder,
+#name::placeholder {
+  font-size: 14px;
+}
+
+#email:focus,
+#name:focus {
+  outline: none;
 }

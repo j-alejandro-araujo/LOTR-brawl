@@ -16,6 +16,28 @@
 <body>
   <div class="page-container">
     <header>
+
+      <!--modal-->
+      <section class="modal-container hidden">
+        <div id="popup">
+          <div class="modal">
+            <div id="modal-title">
+              <p id="modal-text">Sign Up</p>
+            </div>
+            <div id="modal-inputs-container">
+              <label for="name"></label>
+              <input type="text" id="name" name="name" placeholder="Name" required>
+              <label for="email"></label>
+              <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="space-between">
+              <button id="cancel">Cancel</button>
+              <button id="confirm">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!--mobile navbar-->
       <nav aria-label="mobile" class="mobile-nav">
         <a><img src="images/logo/logo.png" alt="logo" class="logo" id="nav-logo"></a>
@@ -58,14 +80,16 @@
       </div>
 
       <!--gandalf background row-->
-      <div class="row">
-        <div class="one-column gandalf-container">
-          <img src="images/background/pass1.png" alt="gandalf-background" id="gandalf-background">
-          <h2 class="gandalf-text" id="dare-text">Do you dare pass?...</h2>
-          <h3 class="gandalf-text" id="join-text">Join the wait list</h3>
-          <button type="button" class="gandalf-text" id="sign-button">Sign-up</button>
+      <section>
+        <div class="row">
+          <div class="one-column gandalf-container">
+            <img src="images/background/pass1.png" alt="gandalf-background" id="gandalf-background">
+            <h2 class="gandalf-text" id="dare-text">Do you dare pass?...</h2>
+            <h3 class="gandalf-text" id="join-text">Join the wait list</h3>
+            <button type="button" class="gandalf-text" id="sign-button">Sign-up</button>
+          </div>
         </div>
-      </div>
+      </section>
 
     </main>
   </div> <!--Closing div for page container-->

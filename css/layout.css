@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
-    margin: 0 8rem;
+    margin: 0 3rem;
   }
 
   .desktop-nav a {
@@ -39,5 +39,15 @@
   .desktop-nav a:active {
     text-shadow: 0 0 10px bisque, 0 0 20px bisque, 0 0 30px bisque, 0 0 40px bisque;
     transition: text-shadow 0.1s ease-out;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #dare-text {
+    font-size: 40px;
+  }
+
+  #join-text {
+    font-size: 30px;
   }
 }
