@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $navBars.addEventListener('click', navDropdown);
   $navLinks.style.display = 'none';
+  $navLinks.addEventListener('click', navDropdown);
+  $navLinks.style.display = 'none';
 });
 
 // Modal Functionality
