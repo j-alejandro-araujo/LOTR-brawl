@@ -36,3 +36,22 @@ const closeModal = function () {
 
 $cancelButton.addEventListener('click', closeModal);
 $confirmButton.addEventListener('click', closeModal);
+
+// Hide About-Us Image
+const $aboutImage = document.querySelector('.about-us-image');
+
+function hideImage() {
+  if (window.innerWidth <= 768) {
+    $aboutImage.style.display = 'none';
+  } else {
+    $aboutImage.style.display = 'flex';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  hideImage();
+});
+
+window.addEventListener('resize', function () {
+  hideImage();
+});
