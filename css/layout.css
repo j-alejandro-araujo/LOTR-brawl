@@ -7,9 +7,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  #about-us-text {
-    margin-right: 0;
-  }
+  /* #about-us-text {
+    margin: 0;
+    padding: 0;
+  } */
 }
 
 @media screen and (min-width: 768px) {
