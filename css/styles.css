@@ -124,6 +124,42 @@ a:hover {
   padding-bottom: 4rem;
 }
 
+.characters-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebe8e1;
+  width: 100%;
+  height: auto;
+}
+
+.characters-content-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8.5rem;
+  max-width: 85%;
+  border-radius: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.character-column {
+  flex: 1;
+}
+
+.character-info-column {
+  flex: 1;
+}
+
+.character {
+  border-radius: 1rem;
+  object-fit: cover;
+  padding: 2rem 1rem;
+  max-width: 100%;
+  height: auto;
+}
+
 #nav-links {
   font-size: 14px;
   display: none;
@@ -299,4 +335,8 @@ a:hover {
 #email:focus,
 #name:focus {
   outline: none;
+}
+
+.row {
+  display: flex;
 }
