@@ -8,12 +8,137 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asul&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-  </header>
-  <main>
-  </main>
+  <div class="page-container">
+    <header>
+
+      <!--modal-->
+      <section class="modal-container hidden">
+        <div id="popup">
+          <div class="modal">
+            <div id="modal-title">
+              <p id="modal-text">Sign Up</p>
+            </div>
+            <div id="modal-inputs-container">
+              <input type="text" id="name" name="name" placeholder="Name" required>
+              <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="space-between">
+              <button id="cancel">Cancel</button>
+              <button id="confirm">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--mobile navbar-->
+      <nav aria-label="mobile" class="mobile-nav">
+        <a><img src="images/logo/logo.png" alt="logo" class="mobile-logo" id="nav-logo"></a>
+        <div id="nav-links">
+          <a href="#">ABOUT</a>
+          <a href="#">FIGHTERS</a>
+          <a href="#">MAP</a>
+          <a href="#">LOCATIONS</a>
+          <a href="#">QUOTES</a>
+          <a href="#">GIF</a>
+        </div>
+        <div id="bars-wrapper">
+          <a href="javascript:void(0);" id="nav-bars"><i class="fa-solid fa-bars fa-3x"></i></a>
+        </div>
+      </nav>
+
+      <!--desktop navbar-->
+      <nav aria-label="desktop" class="desktop-nav">
+        <div id="desktop-nav-links">
+          <a href="#" class="desk-links">ABOUT</a>
+          <a href="#" class="desk-links">FIGHTERS</a>
+          <a href="#" class="desk-links">MAP</a>
+          <a><img src="images/logo/logo.png" alt="logo" class="logo" id="desktop-nav-logo"></a>
+          <a href="#" class="desk-links">LOCATIONS</a>
+          <a href="#" class="desk-links">QUOTES</a>
+          <a href="#" class="desk-links">GIF</a>
+        </div>
+      </nav>
+    </header>
+
+    <!--white line for mobile and desktop-->
+    <hr id="white-line">
+    <hr id="desktop-white-line">
+
+    <main>
+
+      <!--LOTR title image-->
+      <div class="row">
+        <div class="one-column">
+          <img src="images/title/lord_of_the_rings_png_title_by_workfromhomegal_dail067-fullview.png" alt="title" id="title-image">
+        </div>
+      </div>
+
+      <!--gandalf background row-->
+      <section>
+        <div class="row">
+          <div class="one-column gandalf-container">
+            <img src="images/background/pass1.png" alt="gandalf-background" id="gandalf-background">
+            <h2 class="gandalf-text" id="dare-text">Do you dare pass?...</h2>
+            <h3 class="gandalf-text" id="join-text">Join the wait list</h3>
+            <button type="button" class="gandalf-text" id="sign-button">Sign-up</button>
+          </div>
+        </div>
+      </section>
+
+      <!--about us-->
+      <section id="about-us">
+        <div class="about-us-container">
+          <h2 class="page-titles" id="about-section-title">WHO WE ARE</h2>
+          <div class="about-us-content">
+            <div class="text-content">
+              <h3 id="about-us-title">WE ARE MAGIC</h3>
+              <p id="about-us-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+              from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+              looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of
+              </p>
+            </div>
+            <div class="about-us-image">
+              <img class="red-frodo" src="images/special/red-frodo.png" alt="red-frodo">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--fighters clash background image-->
+      <section>
+        <div class="row">
+          <div class="one-column clash-container">
+            <img src="images/background/clash2.png" alt="clash-background" id="clash-image">
+          </div>
+        </div>
+      </section>
+
+      <!--character carousel-->
+      <section>
+        <div class="characters-container">
+          <h2 class="page-titles" id="characters-section-title">CHARACTERS</h2>
+          <div class="characters-content-row">
+            <div class="character-column">
+              <img class="character" src="images/characters/frodo.png" alt="frodo-character" id="frodo-character">
+            </div>
+            <div class="character-info-column">
+              <h3 id="character-name">Frodo Baggins</h3>
+              <p id="character-bio">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
+              from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+              looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div> <!--closing div for page container-->
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
