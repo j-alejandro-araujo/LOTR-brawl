@@ -53,3 +53,54 @@ function hideImage() {
 window.addEventListener('resize', function () {
   hideImage();
 });
+
+// Character Carousel Functionality
+const $slides = document.querySelectorAll('.character-carousel-slides li');
+const $prevBtn = document.querySelector('.controls.prev');
+const $nextBtn = document.querySelector('.controls.next');
+
+let currentSlide = 0;
+
+for (let i = 0; i < $slides.length; i++) {
+  const slide = $slides[i];
+  if (i !== currentSlide) {
+    slide.style.display = 'none';
+  }
+}
+
+function showSlide(index) {
+  for (let i = 0; i < $slides.length; i++) {
+    $slides[i].style.display = 'none';
+  }
+  $slides[index].style.display = 'block';
+}
+
+function nextSlide() {
+  currentSlide++;
+  if (currentSlide === $slides.length) {
+    currentSlide = 0;
+  }
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide--;
+  if (currentSlide < 0) {
+    currentSlide = $slides.length - 1;
+  }
+  showSlide(currentSlide);
+}
+
+let interval = setInterval(nextSlide, 5000);
+
+$nextBtn.addEventListener('click', () => {
+  nextSlide();
+  clearInterval(interval);
+  interval = setInterval(nextSlide, 5000);
+});
+
+$prevBtn.addEventListener('click', () => {
+  prevSlide();
+  clearInterval(interval);
+  interval = setInterval(nextSlide, 5000);
+});

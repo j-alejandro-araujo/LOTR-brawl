@@ -124,8 +124,18 @@
         <div class="characters-container">
           <h2 class="page-titles" id="characters-section-title">CHARACTERS</h2>
           <div class="characters-content-row">
-            <div class="character-column">
-              <img class="character" src="images/characters/frodo.png" alt="frodo-character" id="frodo-character">
+            <div class="character-column" id="character-carousel-container">
+              <ul class="character-carousel-slides">
+                <li><img class="character" src="images/characters/frodo.png" alt="frodo-character" id="frodo-character"></li>
+                <li><img class="character" src="images/characters/gandalf.png" alt="gandalf-character" id="gandalf-character"></li>
+              </ul>
+
+              <button class="controls prev">
+                <i class="fa-sharp fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="controls next">
+                <i class="fa-sharp fa-solid fa-chevron-right"></i>
+              </button>
             </div>
             <div class="character-info-column">
               <h3 class="content-titles" id="character-name">Frodo Baggins</h3>
