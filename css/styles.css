@@ -96,12 +96,12 @@ a:hover {
   flex: 1;
 }
 
-#about-us-title {
+.content-titles {
   color: #fdbf01;
   text-align: center;
   padding-top: 3rem;
   font-size: 26px;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
   margin: 0;
 }
 
@@ -123,6 +123,7 @@ a:hover {
   color: white;
   padding: 1.5rem;
   padding-bottom: 4rem;
+  font-size: 14px;
 }
 
 .characters-container {
@@ -133,32 +134,43 @@ a:hover {
   background-color: #ebe8e1;
   width: 100%;
   height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .characters-content-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8.5rem;
-  max-width: 85%;
-  border-radius: 1rem;
+  max-width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
 .character-column {
   flex: 1;
+  margin-right: 1rem;
 }
 
 .character-info-column {
   flex: 1;
+  background-color: #1a1514;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+#character-bio {
+  color: white;
+  font-size: 14px;
+  padding: 1.5rem;
+  padding-bottom: 4rem;
 }
 
 .character {
-  border-radius: 1rem;
-  object-fit: cover;
-  padding: 2rem 1rem;
   max-width: 100%;
   height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 #nav-links {
