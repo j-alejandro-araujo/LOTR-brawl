@@ -181,6 +181,8 @@ ul {
 .character-carousel-slides {
   display: flex;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .character-carousel-slides li {
@@ -193,20 +195,21 @@ ul {
 
 .controls {
   position: absolute;
-  top: 20px;
+  top: 40%;
   background: none;
   border: none;
   color: #1a1514;
+  opacity: 50%;
   font-size: 3rem;
   cursor: pointer;
 }
 
 .prev {
-  left: -20px;
+  left: 5%;
 }
 
 .next {
-  right: -20px;
+  right: 5%;
 }
 
 #nav-links {
