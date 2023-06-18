@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
   $navLinks.style.display = 'none';
   $navLinks.addEventListener('click', navDropdown);
   $navLinks.style.display = 'none';
+
+  hideImage();
 });
 
 // Modal Functionality
@@ -47,10 +49,6 @@ function hideImage() {
     $aboutImage.style.display = 'flex';
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  hideImage();
-});
 
 window.addEventListener('resize', function () {
   hideImage();
