@@ -144,7 +144,7 @@ ul {
 
 .characters-content-row {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 8.5rem;
   max-width: 100%;
   padding-left: 2rem;
@@ -153,15 +153,12 @@ ul {
 
 .character-column {
   position: relative;
-  flex: 1;
-  margin-right: 1rem;
 }
 
 .character-info-column {
-  flex: 1;
   background-color: #1a1514;
   border-radius: 1rem;
-  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 #character-bio {
