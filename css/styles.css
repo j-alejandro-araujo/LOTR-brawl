@@ -45,6 +45,7 @@ a:hover {
 .one-column {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .gandalf-container {
@@ -230,6 +231,7 @@ a:hover {
   min-width: 200px;
   max-width: 800px;
   height: auto;
+  width: 100%;
   margin-top: 5.5rem;
 }
 
