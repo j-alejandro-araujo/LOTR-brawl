@@ -201,6 +201,16 @@ ul {
   cursor: pointer;
 }
 
+.controls:hover {
+  color: #1a1514;
+  opacity: 80%;
+}
+
+.controls:active {
+  color: #fdbf01;
+  opacity: 80%;
+}
+
 .prev {
   left: 5%;
 }
