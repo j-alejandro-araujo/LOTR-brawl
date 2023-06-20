@@ -115,13 +115,13 @@ function addCharacterBio() {
   const characterId = $slides[currentSlide].dataset.id;
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `https://the-one-api.dev/v2/character/${characterId}`);
+  xhr.responseType = 'json';
   xhr.setRequestHeader('Authorization', 'Bearer 11h7XFXlBURcYxWJr0dh');
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
-        const data = JSON.parse(xhr.responseText);
-        const character = data.docs[0];
+        const character = xhr.response.docs[0];
 
         $characterBioContainer.innerHTML = `
           <h3 class="content-titles">${character.name}</h3>
