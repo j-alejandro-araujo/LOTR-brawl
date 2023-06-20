@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   $navLinks.style.display = 'none';
 
   hideImage();
+  addCharacterBio();
 });
 
 // Modal Functionality
@@ -81,6 +82,7 @@ function nextSlide() {
     currentSlide = 0;
   }
   showSlide(currentSlide);
+  addCharacterBio();
 }
 
 function prevSlide() {
@@ -89,6 +91,7 @@ function prevSlide() {
     currentSlide = $slides.length - 1;
   }
   showSlide(currentSlide);
+  addCharacterBio();
 }
 
 let interval = setInterval(nextSlide, 5000);
@@ -104,3 +107,35 @@ $prevBtn.addEventListener('click', () => {
   clearInterval(interval);
   interval = setInterval(nextSlide, 5000);
 });
+
+// Character Bio using API
+const $characterBioContainer = document.querySelector('.character-bio');
+
+function addCharacterBio() {
+  const characterId = $slides[currentSlide].dataset.id;
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `https://the-one-api.dev/v2/character/${characterId}`);
+  xhr.setRequestHeader('Authorization', 'Bearer 11h7XFXlBURcYxWJr0dh');
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        const data = JSON.parse(xhr.responseText);
+        const character = data.docs[0];
+
+        $characterBioContainer.innerHTML = `
+          <h3 class="content-titles">${character.name}</h3>
+          <p>Race: ${character.race}</p>
+          <p>Realm: ${character.realm}</p>
+          <p>Gender: ${character.gender}</p>
+          <p>Birth: ${character.birth}</p>
+          <p>Death: ${character.death}</p>
+          <p>Spouse: ${character.spouse}</p>
+          <p>Wiki Link: <a href="${character.wikiUrl}" target="_blank">Learn More</a></p>
+        `;
+      }
+    }
+  };
+
+  xhr.send();
+}
