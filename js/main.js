@@ -94,18 +94,18 @@ function prevSlide() {
   addCharacterBio();
 }
 
-let interval = setInterval(nextSlide, 5000);
+let interval = setInterval(nextSlide, 10000);
 
 $nextBtn.addEventListener('click', () => {
   nextSlide();
   clearInterval(interval);
-  interval = setInterval(nextSlide, 5000);
+  interval = setInterval(nextSlide, 10000);
 });
 
 $prevBtn.addEventListener('click', () => {
   prevSlide();
   clearInterval(interval);
-  interval = setInterval(nextSlide, 5000);
+  interval = setInterval(nextSlide, 10000);
 });
 
 // Character Bio using API
@@ -116,7 +116,7 @@ function addCharacterBio() {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `https://the-one-api.dev/v2/character/${characterId}`);
   xhr.responseType = 'json';
-  xhr.setRequestHeader('Authorization');
+  xhr.setRequestHeader('Authorization', 'Bearer 11h7XFXlBURcYxWJr0dh');
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
