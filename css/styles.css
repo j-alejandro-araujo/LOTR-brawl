@@ -109,6 +109,16 @@ ul {
   margin: 0;
 }
 
+.bio-title {
+  color: #fdbf01;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 26px;
+  letter-spacing: 0.1rem;
+  margin: 0;
+}
+
 .page-titles {
   font-size: 48px;
   letter-spacing: 0.25rem;
@@ -128,6 +138,10 @@ ul {
   padding: 1.5rem;
   padding-bottom: 4rem;
   font-size: 14px;
+}
+
+.wiki-url {
+  color: #fdbf01;
 }
 
 .characters-container {

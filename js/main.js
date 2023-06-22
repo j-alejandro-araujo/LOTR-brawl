@@ -116,7 +116,7 @@ function addCharacterBio() {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `https://the-one-api.dev/v2/character/${characterId}`);
   xhr.responseType = 'json';
-  xhr.setRequestHeader('Authorization', 'Bearer 11h7XFXlBURcYxWJr0dh');
+  xhr.setRequestHeader('Authorization');
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -124,14 +124,14 @@ function addCharacterBio() {
         const character = xhr.response.docs[0];
 
         $characterBioContainer.innerHTML = `
-          <h3 class="content-titles">${character.name}</h3>
+          <h3 class="bio-title">${character.name}</h3>
           <p>Race: ${character.race}</p>
           <p>Realm: ${character.realm}</p>
           <p>Gender: ${character.gender}</p>
           <p>Birth: ${character.birth}</p>
           <p>Death: ${character.death}</p>
           <p>Spouse: ${character.spouse}</p>
-          <p>Wiki Link: <a href="${character.wikiUrl}" target="_blank">Learn More</a></p>
+          <p>Wiki Link: <a href="${character.wikiUrl}" target="_blank" class="wiki-url">Learn More</a></p>
         `;
       }
     }
