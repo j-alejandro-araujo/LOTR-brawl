@@ -6,8 +6,8 @@
   <title>AJAX Project</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +40,8 @@
       <nav aria-label="mobile" class="mobile-nav">
         <a><img src="images/logo/logo.png" alt="logo" class="mobile-logo" id="nav-logo"></a>
         <div id="nav-links">
-          <a href="#">ABOUT</a>
-          <a href="#">FIGHTERS</a>
+          <a href="#about-us-section">ABOUT</a>
+          <a href="#character-section">FIGHTERS</a>
           <a href="#">MAP</a>
           <a href="#">LOCATIONS</a>
           <a href="#">QUOTES</a>
@@ -55,8 +55,8 @@
       <!--desktop navbar-->
       <nav aria-label="desktop" class="desktop-nav">
         <div id="desktop-nav-links">
-          <a href="#" class="desk-links">ABOUT</a>
-          <a href="#" class="desk-links">FIGHTERS</a>
+          <a href="#about-us-section" class="desk-links">ABOUT</a>
+          <a href="#character-section" class="desk-links">FIGHTERS</a>
           <a href="#" class="desk-links">MAP</a>
           <a><img src="images/logo/logo.png" alt="logo" class="logo" id="desktop-nav-logo"></a>
           <a href="#" class="desk-links">LOCATIONS</a>
@@ -92,15 +92,14 @@
       </section>
 
       <!--about us-->
-      <section id="about-us">
+      <section id="about-us-section">
         <div class="about-us-container">
-          <h2 class="page-titles" id="about-section-title">WHO WE ARE</h2>
+          <h2 class="page-titles" id="about-section-title">ABOUT US</h2>
           <div class="about-us-content">
             <div class="text-content">
-              <h3 id="about-us-title">WE ARE MAGIC</h3>
-              <p id="about-us-text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
-              from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-              looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of
+              <h3 class="content-titles" id="about-us-title">WE ARE MAGIC</h3>
+              <p id="about-us-text">Love Lord of the Rings? Love video games? If you do, then you're in the right place! I am a new devloper and this is
+              project was built during my time while attending the coding bootcamp LearningFuze in Irvine, CA<br><br>This page was built using vanilla JavaScript, HTML, and CSS. I utilized the API - The One API - to pull in necessary data when applicable. The images were created using Midjourney and were modeled in style of the artist Bengus.<br><br>It's been a lot of fun building this project and I hope you enjoy your time here!<br><br>- JANDO
               </p>
             </div>
             <div class="about-us-image">
@@ -120,18 +119,37 @@
       </section>
 
       <!--character carousel-->
-      <section>
+      <section id="character-section">
         <div class="characters-container">
           <h2 class="page-titles" id="characters-section-title">CHARACTERS</h2>
           <div class="characters-content-row">
-            <div class="character-column">
-              <img class="character" src="images/characters/frodo.png" alt="frodo-character" id="frodo-character">
+            <div class="character-column" id="character-carousel-container">
+              <ul class="character-carousel-slides">
+                <li data-id="5cd99d4bde30eff6ebccfc15"><img class="character" src="images/characters/frodo.png" alt="frodo-character" id="frodo-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfd0d"><img class="character" src="images/characters/sam.png" alt="sam-character" id="sam-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfd23"><img class="character" src="images/characters/gimli.png" alt="gimli-character" id="gimli-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfea0"><img class="character" src="images/characters/gandalf.png" alt="gandalf-character" id="gandalf-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfea4"><img class="character" src="images/characters/saruman.png" alt="saruman-character" id="saruman-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfc07"><img class="character" src="images/characters/arwen.png" alt="arwen-character" id="arwen-character"></li>
+                <li data-id="5cd9d533844dc4c55e47afed"><img class="character" src="images/characters/treebeard.png" alt="treebeard-character" id="treebeard-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfe18"><img class="character" src="images/characters/thror.png" alt="thror-character" id="thror-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfd06"><img class="character" src="images/characters/galadriel.png" alt="galadriel-character" id="galadriel-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfbe6"><img class="character" src="images/characters/aragorn.png" alt="aragorn-character" id="aragorn-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfe9e"><img class="character" src="images/characters/gollum.png" alt="gollum-character" id="gollum-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfd81"><img class="character" src="images/characters/legolas.png" alt="legolas-character" id="legolas-character"></li>
+                <li data-id="5cdbdecb6dc0baeae48cfa96"><img class="character" src="images/characters/gothmog.png" alt="gothmog-character" id="gothmog-character"></li>
+                <li data-id="5cd99d4bde30eff6ebccfea5"><img class="character" src="images/characters/sauron.png" alt="sauron-character" id="sauron-character"></li>
+              </ul>
+
+              <button class="controls prev">
+                <i class="fa-sharp fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="controls next">
+                <i class="fa-sharp fa-solid fa-chevron-right"></i>
+              </button>
             </div>
             <div class="character-info-column">
-              <h3 id="character-name">Frodo Baggins</h3>
-              <p id="character-bio">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature
-              from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-              looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of</p>
+              <p class="character-bio"></p>
             </div>
           </div>
         </div>
