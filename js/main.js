@@ -134,7 +134,7 @@ function addCharacterBio() {
           <p>Wiki Link: <a href="${character.wikiUrl}" target="_blank" class="wiki-url">Learn More</a></p>
         `;
       } else {
-        $characterBioContainer.innerHTML = 'Sorry for the wait, character data is loading!';
+        $characterBioContainer.innerHTML = 'Sorry for the inconvenience, it appears there is an error.';
       }
     }
   };
