@@ -133,6 +133,8 @@ function addCharacterBio() {
           <p>Spouse: ${character.spouse}</p>
           <p>Wiki Link: <a href="${character.wikiUrl}" target="_blank" class="wiki-url">Learn More</a></p>
         `;
+      } else {
+        $characterBioContainer.innerHTML = 'Sorry for the wait, character data is loading!';
       }
     }
   };
