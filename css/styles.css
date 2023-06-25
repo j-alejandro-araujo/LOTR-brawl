@@ -414,3 +414,18 @@ ul {
 .row {
   display: flex;
 }
+
+.map-container {
+  margin: 0 auto;
+  width: 80%;
+  height: 500px;
+}
+
+#map-section {
+  background-color: #ebe8e1;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}

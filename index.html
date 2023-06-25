@@ -12,7 +12,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asul&display=swap" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  </head>
+
 <body>
   <div class="page-container">
     <header>
@@ -151,6 +156,27 @@
             <div class="character-info-column">
               <p class="character-bio"></p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!--map & location-->
+      <section id="map-section">
+        <div class="map-container">
+          <div id="map">
+            <script>
+            const map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -3,
+            maxZoom: 1
+            });
+
+            const bounds = [[0, 0], [5656, 8000]];
+            const image = L.imageOverlay('images/map/MiddleEarthUpscaled.jpg', bounds);
+            image.addTo(map);
+
+            map.fitBounds(bounds);
+            </script>
           </div>
         </div>
       </section>
