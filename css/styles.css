@@ -525,3 +525,11 @@ ul {
   padding-right: 2rem;
   padding-bottom: 2rem;
 }
+
+.loc-prev {
+  left: 8%;
+}
+
+.loc-next {
+  right: 8%;
+}

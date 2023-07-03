@@ -144,8 +144,8 @@ function addCharacterBio() {
 
 // Location Carousel
 const $locationSlides = document.querySelectorAll('.locations-carousel-slides li');
-const $locationPrevBtn = document.querySelector('.loc-controls.prev');
-const $locationNextBtn = document.querySelector('.loc-controls.next');
+const $locationPrevBtn = document.querySelector('.loc-controls.loc-prev');
+const $locationNextBtn = document.querySelector('.loc-controls.loc-next');
 
 let currentLocSlide = 0;
 
