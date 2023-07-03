@@ -427,7 +427,6 @@ ul {
 
 #map-section {
   background-color: rgb(234, 232, 225);
-  padding-bottom: 8.5rem;
 }
 
 #map {
@@ -435,4 +434,94 @@ ul {
   width: 100%;
   background-color: #1a1514;
   border-radius: 1rem;
+  z-index: 1;
+}
+
+.locations-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebe8e1;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.locations-carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.loc-controls {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  color: white;
+  opacity: 50%;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.loc-controls:hover {
+  color: white;
+  opacity: 80%;
+}
+
+.loc-controls:active {
+  color: #fdbf01;
+  opacity: 80%;
+}
+
+.location {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.locations-carousel-slides {
+  display: flex;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.locations-carousel-slides li {
+  flex-basis: 100%;
+}
+
+.locations-carousel-slides img {
+  width: 100%;
+}
+
+.locations-content-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.location-info-container {
+  background-color: #eae8e1;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.location-info {
+  background-color: #1a1514;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8.5rem;
+  width: 100%;
+  border-radius: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
 }
