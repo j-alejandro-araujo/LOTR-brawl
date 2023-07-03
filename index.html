@@ -47,7 +47,7 @@
         <div id="nav-links">
           <a href="#about-us-section">ABOUT</a>
           <a href="#character-section">FIGHTERS</a>
-          <a href="#">MAP</a>
+          <a href="#map-section">MAP</a>
           <a href="#">LOCATIONS</a>
           <a href="#">QUOTES</a>
           <a href="#">GIF</a>
@@ -62,7 +62,7 @@
         <div id="desktop-nav-links">
           <a href="#about-us-section" class="desk-links">ABOUT</a>
           <a href="#character-section" class="desk-links">FIGHTERS</a>
-          <a href="#" class="desk-links">MAP</a>
+          <a href="#map-section" class="desk-links">MAP</a>
           <a><img src="images/logo/logo.png" alt="logo" class="logo" id="desktop-nav-logo"></a>
           <a href="#" class="desk-links">LOCATIONS</a>
           <a href="#" class="desk-links">QUOTES</a>
@@ -163,19 +163,39 @@
       <!--map & location-->
       <section id="map-section">
         <div class="map-container">
+          <h2 class="page-titles" id="map-section-title">MAP</h2>
           <div id="map">
             <script>
+            const bounds = [[0, 0], [5656, 8000]];
             const map = L.map('map', {
             crs: L.CRS.Simple,
             minZoom: -3,
-            maxZoom: 1
-            });
+            maxZoom: 1,
+            maxBounds: bounds,
+            maxBoundsViscosity: 1.0
+            }).setView([0, 0], 0);
 
-            const bounds = [[0, 0], [5656, 8000]];
             const image = L.imageOverlay('images/map/MiddleEarthUpscaled.jpg', bounds);
             image.addTo(map);
 
             map.fitBounds(bounds);
+
+            const icon = L.icon({
+              iconUrl: '/images/map/map-icon.png',
+              iconSize: [38, 38]
+            })
+
+            const theShire = L.latLng(4100, 2420);
+            L.marker(theShire, { icon: icon }).addTo(map).bindPopup('The Shire');
+            const rivendell = L.latLng(4230, 4200);
+            L.marker(rivendell, { icon: icon }).addTo(map).bindPopup('Rivendell');
+            const minas = L.latLng(1488, 5288);
+            L.marker(minas, { icon: icon }).addTo(map).bindPopup('Minas Tirith');
+            const doom = L.latLng(1680, 5933);
+            L.marker(doom, { icon: icon }).addTo(map).bindPopup('Mount Doom');
+            const isengard = L.latLng(2480, 3808);
+            L.marker(isengard, { icon: icon }).addTo(map).bindPopup('Isengard');
+
             </script>
           </div>
         </div>
