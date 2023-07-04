@@ -26,12 +26,14 @@ const $modal = document.querySelector('.modal-container');
 const $cancelButton = document.querySelector('#cancel');
 const $confirmButton = document.querySelector('#confirm');
 const $signButton = document.querySelector('#sign-button');
+const $lastSignButton = document.querySelector('#last-fight-button');
 
 const openModal = function () {
   $modal.classList.remove('hidden');
 };
 
 $signButton.addEventListener('click', openModal);
+$lastSignButton.addEventListener('click', openModal);
 
 const closeModal = function () {
   $modal.classList.add('hidden');
