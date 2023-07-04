@@ -579,14 +579,20 @@ ul {
 
 #quote-img {
   width: 100%;
-  height: 350px;
+  height: 400px;
   object-fit: contain;
   object-position: center;
 }
 
 #quote-btn {
   position: absolute;
-  top: 50%;
+  top: 45%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background-color: #1a1514;
+  padding: 1rem 2rem;
+  font-size: 1rem;
 }
 
 #quote-instructions {
