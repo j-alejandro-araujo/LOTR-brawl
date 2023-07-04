@@ -241,3 +241,34 @@ function getRandomQuote() {
 }
 
 $quoteButton.addEventListener('click', getRandomQuote);
+
+// GIF Carousel
+
+const $gifPrevButton = document.querySelector('.gif-prev');
+const $gifNextButton = document.querySelector('.gif-next');
+const $gifSlidesContainer = document.querySelector('.gif-carousel-slides');
+
+const slidesPerView = 3;
+const slideWidth = 100 / slidesPerView;
+
+let slideIndex = 0;
+
+function showGifSlide() {
+  $gifSlidesContainer.style.transform = `translateX(-${slideIndex * slideWidth}%)`;
+}
+
+$gifPrevButton.addEventListener('click', () => {
+  if (slideIndex > 0) {
+    slideIndex--;
+    showGifSlide();
+  }
+});
+
+$gifNextButton.addEventListener('click', () => {
+  const slidesCount = $gifSlidesContainer.children.length;
+
+  if (slideIndex < slidesCount - slidesPerView) {
+    slideIndex++;
+    showGifSlide();
+  }
+});

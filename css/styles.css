@@ -626,28 +626,30 @@ ul {
   height: auto;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .gif-carousel-container {
   position: relative;
   width: 100%;
-  padding: 0 2rem;
+  margin: 0;
+  overflow: hidden;
 }
 
 .gif-controls {
   position: absolute;
-  top: 50%;
+  top: 40%;
   background: none;
   border: none;
-  color: red;
-  opacity: 50%;
+  color: white;
+  opacity: 80%;
   font-size: 3rem;
   cursor: pointer;
 }
 
 .gif-controls:hover {
   color: white;
-  opacity: 80%;
+  opacity: 100%;
 }
 
 .gif-controls:active {
@@ -657,17 +659,21 @@ ul {
 
 .gif-carousel-slides {
   display: flex;
-  overflow: hidden;
+  scroll-snap-type: x mandatory;
   margin: 0;
   padding: 0;
+  transition: transform 0.5s ease;
 }
 
 .gif-carousel-slides li {
-  flex-basis: 100%;
+  flex-shrink: 0;
+  width: calc(100% / 2);
+  scroll-snap-align: start;
 }
 
 .gif-carousel-slides img {
   width: 100%;
+  display: block;
 }
 
 .gif-content-row {
@@ -675,4 +681,17 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 8.5rem;
+}
+
+.gif-carousel-slides iframe {
+  max-width: 100%;
+}
+
+.gif-prev {
+  left: 8%;
+}
+
+.gif-next {
+  right: 8%;
 }
