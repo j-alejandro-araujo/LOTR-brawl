@@ -120,6 +120,7 @@ ul {
 }
 
 .page-titles {
+  text-align: center;
   font-size: 48px;
   letter-spacing: 0.25rem;
   color: #fdbf01;
