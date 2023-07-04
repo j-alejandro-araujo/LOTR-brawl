@@ -12,7 +12,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Asul&display=swap" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  </head>
+
 <body>
   <div class="page-container">
     <header>
@@ -42,8 +47,8 @@
         <div id="nav-links">
           <a href="#about-us-section">ABOUT</a>
           <a href="#character-section">FIGHTERS</a>
-          <a href="#">MAP</a>
-          <a href="#">LOCATIONS</a>
+          <a href="#map-section">MAP</a>
+          <a href="#locations-section">LOCATIONS</a>
           <a href="#">QUOTES</a>
           <a href="#">GIF</a>
         </div>
@@ -57,9 +62,9 @@
         <div id="desktop-nav-links">
           <a href="#about-us-section" class="desk-links">ABOUT</a>
           <a href="#character-section" class="desk-links">FIGHTERS</a>
-          <a href="#" class="desk-links">MAP</a>
+          <a href="#map-section" class="desk-links">MAP</a>
           <a><img src="images/logo/logo.png" alt="logo" class="logo" id="desktop-nav-logo"></a>
-          <a href="#" class="desk-links">LOCATIONS</a>
+          <a href="#locations-section" class="desk-links">LOCATIONS</a>
           <a href="#" class="desk-links">QUOTES</a>
           <a href="#" class="desk-links">GIF</a>
         </div>
@@ -150,6 +155,115 @@
             </div>
             <div class="character-info-column">
               <p class="character-bio"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--interactive leaflet map-->
+      <section id="map-section">
+        <div class="map-container">
+          <h2 class="page-titles" id="map-section-title">MAP</h2>
+          <div id="map">
+            <script>
+            const bounds = [[0, 0], [5656, 8000]];
+            const map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -3,
+            maxZoom: 1,
+            maxBounds: bounds,
+            maxBoundsViscosity: 1.0
+            }).setView([0, 0], 0);
+
+            const image = L.imageOverlay('images/map/MiddleEarthUpscaled.jpg', bounds);
+            image.addTo(map);
+
+            map.fitBounds(bounds);
+
+            const icon = L.icon({
+              iconUrl: '/images/map/map-icon.png',
+              iconSize: [38, 38]
+            })
+
+            const theShire = L.latLng(4100, 2420);
+            L.marker(theShire, { icon: icon }).addTo(map).bindPopup('The Shire');
+            const rivendell = L.latLng(4230, 4200);
+            L.marker(rivendell, { icon: icon }).addTo(map).bindPopup('Rivendell');
+            const minas = L.latLng(1488, 5288);
+            L.marker(minas, { icon: icon }).addTo(map).bindPopup('Minas Tirith');
+            const doom = L.latLng(1680, 5933);
+            L.marker(doom, { icon: icon }).addTo(map).bindPopup('Mount Doom');
+            const isengard = L.latLng(2480, 3808);
+            L.marker(isengard, { icon: icon }).addTo(map).bindPopup('Isengard');
+
+            </script>
+          </div>
+        </div>
+      </section>
+
+      <!--locations carousel-->
+      <section id="locations-section">
+        <div class="locations-container">
+          <h2 class="page-titles" id="locations-section-title">LOCATIONS</h2>
+          <div class="locations-content-row">
+            <div class="locations-carousel-container">
+              <ul class="locations-carousel-slides">
+                <li><img class="location" src="images/location/shire.png" alt="shire"/></li>
+                <li><img class="location" src="images/location/rivendell.png" alt="rivendell" /></li>
+                <li><img class="location" src="images/location/minas.png" alt="minas" /></li>
+                <li><img class="location" src="images/location/isengard.png" alt="isengard" /></li>
+                <li><img class="location" src="images/location/doom.png" alt="doom" /></li>
+              </ul>
+              <button class="loc-controls loc-prev">
+                <i class="fa-sharp fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="loc-controls loc-next">
+                <i class="fa-sharp fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="location-info-container">
+              <ul class="location-info">
+                <li><h3 class="content-titles">The Shire</h3>
+                  <p id="shire-info">The Shire is a peaceful and picturesque land in the northwest of Middle-earth. It is known for its lush greenery,
+                  rolling hills, and quaint countryside. The primary inhabitants are the hobbits, a small and friendly race who value
+                  peace, comfort, and good food. It is is divided into four farthings and features the village of Hobbiton in the
+                  Westfarthing. The hobbits enjoy a simple way of life, farming, and tending to their homes. This location is a symbol of
+                  simplicity and contentment, providing a cozy and idyllic countryside for its inhabitants.</p></li>
+                <li><h3 class="content-titles">Rivendell</h3>
+                  <p id="rivendell-info">Rivendell, also known as Imladris, is an ancient elven sanctuary nestled in the foothills of the Misty Mountains. It is
+                  a place of great natural beauty and tranquility, characterized by waterfalls, lush gardens, and majestic architecture.
+                  Rivendell is home to the elves, a wise and immortal race, known for their deep knowledge and connection to nature. Led
+                  by Lord Elrond, Rivendell serves as a refuge and meeting place for various peoples of Middle-earth. It is a center of
+                  learning, healing, and council, where wisdom and ancient lore are preserved. Rivendell stands as a haven of peace and
+                  preservation amidst the tumultuous world, offering solace and guidance to those who seek it.</p></li>
+                <li><h3 class="content-titles">Minas Tirith</h3>
+                  <p id="minas-info">Minas Tirith, also known as the Tower of Guard, is the capital city of Gondor and a formidable stronghold perched upon
+                  seven tiers of white stone. It stands majestically on the edge of the White Mountains, overlooking the vast plains of
+                  the Pelennor. Minas Tirith is a symbol of strength and resilience, serving as the last defense against the forces of
+                  darkness. The city is adorned with grand architecture, including the impressive Citadel and the towering Tower of
+                  Ecthelion. It is the seat of power for the Stewards of Gondor and the ruling regent. Minas Tirith is home to a diverse
+                  population, including soldiers, craftsmen, and scholars. Within its walls, the city houses a rich history and culture,
+                  with libraries, archives, and halls of great beauty. As a beacon of hope, Minas Tirith stands as a testament to the
+                  valor and determination of the people of Gondor in the face of adversity.</p></li>
+                <li><h3 class="content-titles">Isengard</h3>
+                  <p id="isengard-info">Isengard is a fortress located in the treacherous region of Nan Curunír, nestled amidst the towering peaks of the Misty
+                  Mountains. It is a place of great significance in the realm of Middle-earth, known for its dark and brooding atmosphere.
+                  Isengard was once a mighty fortress of the Gondorian kingdom but has fallen under the control of the wizard Saruman, who
+                  has twisted its purpose to serve his own ambitions. The stronghold is surrounded by impenetrable walls and guarded by a
+                  fearsome army of Uruk-hai, bred for war. Within its confines lies the fearsome Orthanc, a black tower that serves as
+                  Saruman's abode and a symbol of his power. Isengard is a place of industry and dark sorcery, where the forces of evil
+                  gather and machinations are set in motion. The desolation and corruption that pervade Isengard reflect the malevolent
+                  influence of Saruman, making it a formidable and foreboding location in the realm of Middle-earth.</p></li>
+                <li><h3 class="content-titles">Mount Doom</h3>
+                  <p id="doom-info">Mount Doom, also known as Orodruin, is an iconic and treacherous volcano situated within the heart of Mordor. This fiery
+                  peak holds immense significance in the realm of Middle-earth as the birthplace of the One Ring and the ultimate
+                  destination of the Fellowship's quest to destroy it. With its ominous and volatile nature, Mount Doom serves as the
+                  focal point of Sauron's power and the site where the Ring can be unmade. Its fiery depths are shrouded in darkness,
+                  spewing molten lava and billowing smoke into the air. The ascent to Mount Doom is perilous, with treacherous slopes and
+                  a landscape scarred by the forces of evil. The mountain's fiery maw poses a constant threat, testing the resolve and
+                  fortitude of those who dare to approach it. Mount Doom stands as a formidable and ominous landmark, embodying the immense power and destructive potential of the One
+                  Ring.</p></li>
+              </ul>
             </div>
           </div>
         </div>

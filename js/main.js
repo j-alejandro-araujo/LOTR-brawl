@@ -141,3 +141,75 @@ function addCharacterBio() {
 
   xhr.send();
 }
+
+// Location Carousel
+const $locationSlides = document.querySelectorAll('.locations-carousel-slides li');
+const $locationPrevBtn = document.querySelector('.loc-controls.loc-prev');
+const $locationNextBtn = document.querySelector('.loc-controls.loc-next');
+
+let currentLocSlide = 0;
+
+for (let i = 0; i < $locationSlides.length; i++) {
+  const slide = $locationSlides[i];
+  if (i !== currentLocSlide) {
+    slide.style.display = 'none';
+  }
+}
+
+function showLocationSlide(index) {
+  for (let i = 0; i < $locationSlides.length; i++) {
+    $locationSlides[i].style.display = 'none';
+  }
+  $locationSlides[index].style.display = 'block';
+  updateLocationInfo($locationSlides[index]);
+}
+
+function nextLocationSlide() {
+  currentLocSlide++;
+  if (currentLocSlide === $locationSlides.length) {
+    currentLocSlide = 0;
+  }
+  showLocationSlide(currentLocSlide);
+  addCharacterBio();
+}
+
+function prevLocationSlide() {
+  currentLocSlide--;
+  if (currentLocSlide < 0) {
+    currentLocSlide = $locationSlides.length - 1;
+  }
+  showLocationSlide(currentLocSlide);
+  addCharacterBio();
+}
+
+$locationNextBtn.addEventListener('click', () => {
+  nextLocationSlide();
+  clearInterval(interval);
+});
+
+$locationPrevBtn.addEventListener('click', () => {
+  prevLocationSlide();
+  clearInterval(interval);
+});
+
+const $locationInfoElements = document.querySelectorAll('.location-info li');
+
+function updateLocationInfo(slide) {
+  const selectedLocation = slide.querySelector('img').alt.toLowerCase();
+
+  $locationInfoElements.forEach(function (info) {
+    const locationName = info.querySelector('p').id.split('-')[0];
+
+    if (locationName === selectedLocation) {
+      info.style.display = 'block';
+    } else {
+      info.style.display = 'none';
+    }
+  });
+}
+
+$locationInfoElements.forEach(function (info, index) {
+  if (index !== 0) {
+    info.style.display = 'none';
+  }
+});
