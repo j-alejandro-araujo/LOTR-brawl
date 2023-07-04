@@ -94,18 +94,12 @@ function prevSlide() {
   addCharacterBio();
 }
 
-let interval = setInterval(nextSlide, 10000);
-
 $nextBtn.addEventListener('click', () => {
   nextSlide();
-  clearInterval(interval);
-  interval = setInterval(nextSlide, 10000);
 });
 
 $prevBtn.addEventListener('click', () => {
   prevSlide();
-  clearInterval(interval);
-  interval = setInterval(nextSlide, 10000);
 });
 
 // Character Bio using API
@@ -184,12 +178,10 @@ function prevLocationSlide() {
 
 $locationNextBtn.addEventListener('click', () => {
   nextLocationSlide();
-  clearInterval(interval);
 });
 
 $locationPrevBtn.addEventListener('click', () => {
   prevLocationSlide();
-  clearInterval(interval);
 });
 
 const $locationInfoElements = document.querySelectorAll('.location-info li');

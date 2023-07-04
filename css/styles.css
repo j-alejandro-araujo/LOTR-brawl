@@ -554,6 +554,10 @@ ul {
 }
 
 .quote-text-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #1a1514;
   border-radius: 1rem;
   flex: 1;
@@ -599,4 +603,10 @@ ul {
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 16px;
+}
+
+#gandi {
+  width: 225px;
+  height: 225px;
+  opacity: 80%;
 }
