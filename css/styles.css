@@ -510,7 +510,7 @@ ul {
 .location-info-container {
   background-color: #eae8e1;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 
 .location-info {
