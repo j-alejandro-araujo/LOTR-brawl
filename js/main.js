@@ -229,7 +229,7 @@ function getRandomQuote() {
         if (rawCharacterRequest.readyState === 4 && rawCharacterRequest.status === 200) {
           const character = JSON.parse(rawCharacterRequest.responseText);
           const characterName = character.docs[0].name;
-          $quoteTextElement.innerHTML = `<strong>${characterName}:</strong> ${quote.dialog}`;
+          $quoteTextElement.innerHTML = `${quote.dialog}<br><br><span class="quote-name">- - ${characterName}`;
         }
       };
 
