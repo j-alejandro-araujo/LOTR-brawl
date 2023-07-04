@@ -615,3 +615,64 @@ ul {
 .quote-name {
   float: right;
 }
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebe8e1;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.gif-carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.gif-controls {
+  position: absolute;
+  top: 50%;
+  background: none;
+  border: none;
+  color: red;
+  opacity: 50%;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.gif-controls:hover {
+  color: white;
+  opacity: 80%;
+}
+
+.gif-controls:active {
+  color: #fdbf01;
+  opacity: 80%;
+}
+
+.gif-carousel-slides {
+  display: flex;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.gif-carousel-slides li {
+  flex-basis: 100%;
+}
+
+.gif-carousel-slides img {
+  width: 100%;
+}
+
+.gif-content-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
