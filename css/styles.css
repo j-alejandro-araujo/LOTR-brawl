@@ -510,7 +510,7 @@ ul {
 .location-info-container {
   background-color: #eae8e1;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
 }
 
 .location-info {
@@ -614,4 +614,116 @@ ul {
 
 .quote-name {
   float: right;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ebe8e1;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.gif-carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.gif-controls {
+  position: absolute;
+  top: 40%;
+  background: none;
+  border: none;
+  color: white;
+  opacity: 80%;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.gif-controls:hover {
+  color: white;
+  opacity: 100%;
+}
+
+.gif-controls:active {
+  color: #fdbf01;
+  opacity: 80%;
+}
+
+.gif-carousel-slides {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.5s ease;
+}
+
+.gif-carousel-slides li {
+  flex-shrink: 0;
+  width: calc(100% / 2);
+  scroll-snap-align: start;
+}
+
+.gif-carousel-slides img {
+  width: 100%;
+  display: block;
+}
+
+.gif-content-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 8.5rem;
+}
+
+.gif-carousel-slides iframe {
+  max-width: 100%;
+}
+
+.gif-prev {
+  left: 8%;
+}
+
+.gif-next {
+  right: 8%;
+}
+
+.last-modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.last-fight {
+  font-size: 32px;
+}
+
+#last-fight-button {
+  bottom: 3rem;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 40px;
+  background-color: #1a1514;
+  color: white;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1514;
+}
+
+.footer-logo {
+  width: 200px;
+  height: 200px;
 }

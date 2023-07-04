@@ -97,6 +97,10 @@
     margin-left: 1rem;
     margin-top: 0;
   }
+
+  .gif-carousel-slides li {
+    width: calc(100% / 3);
+  }
 }
 
 @media screen and (min-width: 1025px) {
@@ -106,5 +110,9 @@
 
   #join-text {
     font-size: 30px;
+  }
+
+  .gif-carousel-slides li {
+    width: calc(100% / 4);
   }
 }
