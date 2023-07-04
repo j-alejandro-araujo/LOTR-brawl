@@ -213,3 +213,39 @@ $locationInfoElements.forEach(function (info, index) {
     info.style.display = 'none';
   }
 });
+
+// Quote API Function
+const $quoteTextElement = document.querySelector('.quote-text');
+const $quoteButton = document.querySelector('#quote-btn');
+
+function getRandomQuote() {
+  const quotesRequest = new XMLHttpRequest();
+  quotesRequest.open('GET', 'https://the-one-api.dev/v2/quote', true);
+  quotesRequest.setRequestHeader('Authorization', 'Bearer 11h7XFXlBURcYxWJr0dh');
+
+  quotesRequest.onreadystatechange = function () {
+    if (quotesRequest.readyState === 4 && quotesRequest.status === 200) {
+      const quotes = JSON.parse(quotesRequest.responseText);
+      const quote = quotes.docs[Math.floor(Math.random() * quotes?.docs?.length)];
+      const characterId = quote.character;
+
+      const rawCharacterRequest = new XMLHttpRequest();
+      rawCharacterRequest.open('GET', `https://the-one-api.dev/v2/character/${characterId}`, true);
+      rawCharacterRequest.setRequestHeader('Authorization', 'Bearer 11h7XFXlBURcYxWJr0dh');
+
+      rawCharacterRequest.onreadystatechange = function () {
+        if (rawCharacterRequest.readyState === 4 && rawCharacterRequest.status === 200) {
+          const character = JSON.parse(rawCharacterRequest.responseText);
+          const characterName = character.docs[0].name;
+          $quoteTextElement.innerHTML = `<strong>${characterName}:</strong> ${quote.dialog}`;
+        }
+      };
+
+      rawCharacterRequest.send();
+    }
+  };
+
+  quotesRequest.send();
+}
+
+$quoteButton.addEventListener('click', getRandomQuote);
